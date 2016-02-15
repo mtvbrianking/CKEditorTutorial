@@ -1,0 +1,1 @@
+Install CKEDitor by running composer update

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+        <title>CKEditor</title>
+
+	</head>
+
+<body>
+
+    <h2>CKEditor <a target="_blank" href="https://github.com/mtvbrianking/CKEditorTutorial/">Demo III</a></h2>
+    
+    <p>
+    This demo shows how to use CKEditor with external resources (plugins + skins) located in the basePath.<br/>
+    <strong>Note:</strong> <i>BASEPATH</i> is the location of 'ckeditor.js'
+    </p>
+
+	<textarea id="textArea_id" name="textArea_name"></textarea>
+
+    <div id="footer">
+
+        <p>
+            "As we enjoy great advantages from the inventions of others, 
+            we should be glad of an opportunity to serve others by any invention of ours; 
+            and this we should do freely and generously."
+        </p>
+
+        <p style="margin-top: 0">
+            <a target="_blank" href="http://brianmatovu.com/ckeditor-setup-configuration/">Read Tutorial</a>
+        </p>
+
+    </div>
+
+    <!-- base_path/ckeditor.js -->
+    <script src="assets/js/ckeditor/ckeditor.js"></script>
+
+    <script type="text/javascript">
+
+        console.log(CKEDITOR.basePath);
+    	
+        CKEDITOR.replace('textArea_name', {
+            skin: 'moonocolor', // 'base_path/skins/moonocolor'
+            extraPlugins: 'pbckcode', // 'base_path/plugins/pbckcode'
+            toolbar: [
+                [ 'clipboard', 'undo', '-', 'Cut', 'Copy', 'Paste','-', 'Undo', 'Redo' ],
+                [ 'TextColor', 'Bold', 'Italic' ],
+                [ 'Format', 'Font', 'FontSize' ],
+                [ 'pbckcode' ]
+           ]
+        });
+
+    </script>
+
+</body>
+
+</html>
